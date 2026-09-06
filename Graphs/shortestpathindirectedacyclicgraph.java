@@ -13,7 +13,7 @@ public class shortestpathindirectedacyclicgraph {
     }
 
     int[]shortestPath(int V, int E, int[][]edges){
-        List<List<Integer>>a=new ArrayList<>();
+        List<List<pair>>a=new ArrayList<>();
 
         for(int i=0;i<V;i++){
             a.add(new ArrayList<>());
@@ -40,7 +40,7 @@ public class shortestpathindirectedacyclicgraph {
         for(pair i:a.get(node)){
             int neighbournode=i.node;
             int neighbourweight=i.w;
-            if(dist[node]+neighbourweight<=dist[neighbournode]){
+            if(dist[node]!=Integer.MAX_VALUE &&dist[node]+neighbourweight<dist[neighbournode]){
                 dist[neighbournode]=dist[node]+neighbourweight;
                 q.offer(neighbournode);
             }
