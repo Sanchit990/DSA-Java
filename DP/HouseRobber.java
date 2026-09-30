@@ -1,7 +1,6 @@
 package DP;
 
 import java.util.Arrays;
-
 public class HouseRobber {
     int dps(int n,int dp[],int nums[]){
        if(n>=nums.length){
